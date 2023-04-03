@@ -1,0 +1,34 @@
+
+Phần đăng ký:
+-Họ tên
+-Email ID:
+-Mật khẩu
+-Nhập lại mật khẩu:
+-Số điện thoại:
+-Ngày sinh:
+-Giới tính:
+-Địa chỉ:
+//Đăng nhập thành công\\
+Vào homepage:
+-Góc phải có avatar circleImageView:
+-Có thông tin:
+-Thoát
+*)Bên trái màn hình thì có:
+-Nhà cung cấp:Hiện table các nhà cung cấp.Trên màn hình có nút thêm để thêm nhà cung cấp.
+-Catologrories: hiện table các sản phẩm của kho:(có thêm nút thêm sửa xóa)
++Id,Ảnh, Tên, số lượng, nhà cung cấp, tình trạng(tạm dừng, còn hàng), Ngày sản xuất ngày hết hạn.
+-Nhập hàng:Id, Sản phẩm ,số lượng, giá nhâp.
+-Xuất hàng:Id, Sản phẩm, số lượng, giá bán.
+-Lịch sử nhập, xuất.(Lịch sử có thêm ai đã nhập, ai đã xuất)
+-Nhân viên:hiện table nhân viên:
++Có Id, tên, mail, vai trò.
+có nút thêm, sửa:
+Thêm thông tin nhân viên mới:như phần đăng ký nhưng có thêm chọn vai trò:quản lí hoặc nhân viên.
++Quản lí thì có hiện tất cả chức năng còn nhân viên thì có tất cả chức năng ngoại trừ thêm nhân viên.
+
+
+
+
+
+
+
