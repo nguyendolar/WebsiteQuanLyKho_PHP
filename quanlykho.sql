@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 03, 2023 lúc 11:38 AM
+-- Thời gian đã tạo: Th4 13, 2023 lúc 06:04 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.3.30
 
@@ -39,6 +39,14 @@ CREATE TABLE `nguoidung` (
   `quyen_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `nguoidung`
+--
+
+INSERT INTO `nguoidung` (`id`, `hoten`, `email`, `matkhau`, `sodienthoai`, `ngaysinh`, `gioitinh`, `diachi`, `quyen_id`) VALUES
+(1, 'Quản lý', 'quanly@gmail.com', '123456', '0394063547', '', 'Nam', 'Hà Nội', 1),
+(3, 'Đăng Hoàng', 'hung29manh@gmail.com', '123456', '0394083764', '1996-04-04', 'Nữ', 'Hưng Yên', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +57,14 @@ CREATE TABLE `nhacungcap` (
   `id` int(11) NOT NULL,
   `tennhacungcap` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `nhacungcap`
+--
+
+INSERT INTO `nhacungcap` (`id`, `tennhacungcap`) VALUES
+(3, 'Nhà cung cấp A'),
+(4, 'Nhà cung cấp B');
 
 -- --------------------------------------------------------
 
@@ -65,6 +81,15 @@ CREATE TABLE `nhaphang` (
   `ngay` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `nhaphang`
+--
+
+INSERT INTO `nhaphang` (`id`, `sanpham_id`, `soluong`, `gia`, `nguoidung_id`, `ngay`) VALUES
+(1, 3, 100, 100000, 1, '2023-04-13'),
+(2, 3, 200, 200000, 1, '2023-04-13'),
+(3, 2, 100, 200000, 3, '2023-04-13');
+
 -- --------------------------------------------------------
 
 --
@@ -75,6 +100,14 @@ CREATE TABLE `quyen` (
   `id` int(11) NOT NULL,
   `ten` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `quyen`
+--
+
+INSERT INTO `quyen` (`id`, `ten`) VALUES
+(1, 'Quản lý'),
+(2, 'Nhân viên');
 
 -- --------------------------------------------------------
 
@@ -89,9 +122,17 @@ CREATE TABLE `sanpham` (
   `soluong` int(11) NOT NULL,
   `nhacungcap_id` int(11) NOT NULL,
   `tinhtrang` varchar(250) NOT NULL,
-  `ngaysansuat` varchar(250) NOT NULL,
+  `ngaysanxuat` varchar(250) NOT NULL,
   `ngayhethan` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `sanpham`
+--
+
+INSERT INTO `sanpham` (`id`, `ten`, `anh`, `soluong`, `nhacungcap_id`, `tinhtrang`, `ngaysanxuat`, `ngayhethan`) VALUES
+(2, 'All New Mazda BT-50', '2771e6d3ff62869a73cfaa916a41be65.jpg', 100, 4, 'Hoạt động', '2023-04-12', '2023-04-22'),
+(3, 'Rượu', 'download (14).jpg', 175, 3, 'Hoạt động', '2023-04-13', '2023-05-06');
 
 -- --------------------------------------------------------
 
@@ -107,6 +148,13 @@ CREATE TABLE `xuathang` (
   `nguoidung_id` int(11) NOT NULL,
   `ngay` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `xuathang`
+--
+
+INSERT INTO `xuathang` (`id`, `sanpham_id`, `soluong`, `gia`, `nguoidung_id`, `ngay`) VALUES
+(1, 3, 125, 120000, 1, '2023-04-13');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -162,37 +210,37 @@ ALTER TABLE `xuathang`
 -- AUTO_INCREMENT cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `nhacungcap`
 --
 ALTER TABLE `nhacungcap`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `nhaphang`
 --
 ALTER TABLE `nhaphang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `quyen`
 --
 ALTER TABLE `quyen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `xuathang`
 --
 ALTER TABLE `xuathang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

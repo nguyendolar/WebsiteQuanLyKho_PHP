@@ -1,6 +1,6 @@
 <?php
 include('inc/connect.php');
-if (isset($_SESSION['taikhoan'])) {
+if (isset($_SESSION['taikhoanadmin'])) {
   header("Location: index.php");
 }?>
 <!DOCTYPE html>
@@ -15,8 +15,19 @@ if (isset($_SESSION['taikhoan'])) {
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
-    
-   
+    <?php 
+    if (isset($_GET['fail'])) {
+        echo "
+                    <script>
+                        function Redirect() {
+                        window.location = 'login.php';
+                        }
+                        alert('Sai tài khoản hoặc mật khẩu !') 
+                        Redirect()
+                    </script>
+                    ";
+    }
+    ?>
     <body class="bg-primary">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
@@ -25,24 +36,19 @@ if (isset($_SESSION['taikhoan'])) {
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Quản Trị</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">HỆ THỐNG QUẢN LÝ KHO</h3></div>
                                     <div class="card-body">
                                         <form action="checklogin.php" method="POST">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="text" placeholder="" name="taikhoan" />
-                                                <label for="inputEmail">Tài khoản</label>
+                                                <input class="form-control" id="inputEmail" type="email" placeholder="" name="email" />
+                                                <label for="inputEmail">Email</label>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputPassword" type="password" placeholder="" name="matkhau" />
                                                 <label for="inputPassword">Mật khẩu</label>
                                             </div>
-                                            <?php if (isset($_GET['fail'])){ ?>
-                                            <div class="alert alert-danger">
-                                                <strong>Sai tài khoản hoặc mật khẩu !</strong>
-                                            </div>
-                                            <?php }  ?> 
+                                            
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                
                                                 <button class="btn btn-primary" type="submit" name="login">Đăng nhập</button>
                                             </div>
                                         </form>
