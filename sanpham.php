@@ -21,6 +21,10 @@
                              <div class="alert alert-success">
                                 <strong>Thành công</strong>
                             </div>
+                            <?php } else { ?>
+                                <div class="alert alert-danger">
+                                <strong>Không thể xoas !</strong>
+                            </div>
                             <?php }  ?> 
                             <?php }  ?>   
                             <button type="button" class="btn btn-success" data-bs-toggle="modal"
@@ -63,8 +67,8 @@
                                         <td><?php echo $arUser["soluong"] ?></td>
                                         <td><?php echo $arUser["tennhacungcap"] ?></td>
                                         <td><?php echo $arUser["tinhtrang"] ?> </td>
-                                        <td><?php echo $arUser["ngaysanxuat"] ?> </td>
-                                        <td><?php echo $arUser["ngayhethan"] ?> </td>
+                                        <td><?php echo date("d-m-Y", strtotime($arUser["ngaysanxuat"])) ?> </td>
+                                        <td><?php echo date("d-m-Y", strtotime($arUser["ngayhethan"])) ?> </td>
                                         <td style="width : 140px !important">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                                 data-bs-target="#<?php echo $idModelEdit ?>">

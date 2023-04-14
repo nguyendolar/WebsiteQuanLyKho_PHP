@@ -63,8 +63,8 @@
                                         <td><?php echo $arUser["ten"] ?></td>
                                         <td> <img style="width: 300px !important;height: 200px !important;" src="./image/<?php echo $arUser['anh'] ?>"></td>
                                         <td><?php echo $arUser["soluong"] ?></td>
-                                        <td><?php echo $arUser["gia"] ?></td>
-                                        <td><?php echo $arUser["ngay"] ?> </td>
+                                        <td><?php echo number_format($arUser['gia']) ?></td>
+                                        <td><?php echo date("d-m-Y", strtotime($arUser["ngay"])) ?> </td>
                                         <td><?php echo $arUser["hoten"] ?> </td>
 
                                     </tr>

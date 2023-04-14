@@ -21,7 +21,7 @@ if (empty($_SESSION['taikhoanadmin'])) {
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">Xin chào, <?php echo $_SESSION['tenhienthi']; ?><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                   
+                    <li><a class="dropdown-item" href="thongtin.php">Thông tin</a></li>
                     <li><a class="dropdown-item" href="logout.php">Đăng xuất</a></li>
                 </ul>
             </li>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 13, 2023 lúc 06:04 PM
+-- Thời gian đã tạo: Th4 14, 2023 lúc 10:35 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.3.30
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `quanlykho`
+-- Cơ sở dữ liệu: `khohang`
 --
 
 -- --------------------------------------------------------
@@ -44,7 +44,7 @@ CREATE TABLE `nguoidung` (
 --
 
 INSERT INTO `nguoidung` (`id`, `hoten`, `email`, `matkhau`, `sodienthoai`, `ngaysinh`, `gioitinh`, `diachi`, `quyen_id`) VALUES
-(1, 'Quản lý', 'quanly@gmail.com', '123456', '0394063547', '', 'Nam', 'Hà Nội', 1),
+(1, 'Quản lý', 'quanly@gmail.com', '1234567', '0394063547', '1996-04-04', 'Nam', 'Hồ Chí Minh', 1),
 (3, 'Đăng Hoàng', 'hung29manh@gmail.com', '123456', '0394083764', '1996-04-04', 'Nữ', 'Hưng Yên', 2);
 
 -- --------------------------------------------------------
@@ -131,8 +131,8 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`id`, `ten`, `anh`, `soluong`, `nhacungcap_id`, `tinhtrang`, `ngaysanxuat`, `ngayhethan`) VALUES
-(2, 'All New Mazda BT-50', '2771e6d3ff62869a73cfaa916a41be65.jpg', 100, 4, 'Hoạt động', '2023-04-12', '2023-04-22'),
-(3, 'Rượu', 'download (14).jpg', 175, 3, 'Hoạt động', '2023-04-13', '2023-05-06');
+(2, 'Tinh dầu', 'bhoa.jpg', 100, 4, 'Hoạt động', '2023-04-12', '2023-04-22'),
+(3, 'Nước hoa', 'photo_2022_08_09_07_14_4420220809074805202.jpg', 175, 3, 'Hoạt động', '2023-04-13', '2023-05-06');
 
 -- --------------------------------------------------------
 

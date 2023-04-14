@@ -224,6 +224,27 @@ if(isset($_POST['editnv'])){
         header("Location: nguoidung.php?msg=2");
     }
 }
+if(isset($_POST['edittt'])){
+    $hoten = $_POST['hoten'];
+    $email  = $_POST['email'];
+    $matkhau  = $_POST['matkhau'];
+    $sdt = $_POST['sdt'];
+    $gioitinh = $_POST['gioitinh'];
+    $ngaysinh = $_POST['ngaysinh'];
+    $diachi = $_POST['diachi'];
+    $quyen = $_POST['quyen'];
+    $id  = $_POST['id'];
+    $query = "UPDATE `nguoidung` 
+    SET `hoten`='{$hoten}',`email`='{$email}',`sodienthoai`='{$sdt}',`gioitinh`='{$gioitinh}',`ngaysinh`='{$ngaysinh}', `diachi`='{$diachi}', `matkhau`='{$matkhau}', `quyen_id`='{$quyen}'
+    WHERE `id`='{$id}'";
+    $result = mysqli_query($connect, $query);
+    if ($result) {
+        header("Location: thongtin.php?msg=1");
+    } 
+    else {
+        header("Location: thongtin.php?msg=2");
+    }
+}
 if(isset($_POST['deletenv'])){
     $id  = $_POST['id'];
     $check = "SELECT * FROM nhaphang WHERE nguoidung_id = '{$id}'
