@@ -23,7 +23,7 @@
                             </div>
                             <?php } else { ?>
                                 <div class="alert alert-danger">
-                                <strong>Không thể xoas !</strong>
+                                <strong>Không thể xóa !</strong>
                             </div>
                             <?php }  ?> 
                             <?php }  ?>   
@@ -74,10 +74,12 @@
                                                 data-bs-target="#<?php echo $idModelEdit ?>">
                                                 Sửa
                                             </button>
+                                            <?php if($_SESSION['quyen'] == 1){ ?>
                                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                                 data-bs-target="#<?php echo $idModelDel ?>">
                                                 Xóa
                                             </button>
+                                            <?php } ?>
                                             <!--Dele-->
                                             <div class="modal fade" id="<?php echo $idModelDel ?>" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">

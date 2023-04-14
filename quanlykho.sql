@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 14, 2023 lúc 10:35 AM
+-- Thời gian đã tạo: Th4 14, 2023 lúc 04:26 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.3.30
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `khohang`
+-- Cơ sở dữ liệu: `quanlykho`
 --
 
 -- --------------------------------------------------------
@@ -44,8 +44,7 @@ CREATE TABLE `nguoidung` (
 --
 
 INSERT INTO `nguoidung` (`id`, `hoten`, `email`, `matkhau`, `sodienthoai`, `ngaysinh`, `gioitinh`, `diachi`, `quyen_id`) VALUES
-(1, 'Quản lý', 'quanly@gmail.com', '1234567', '0394063547', '1996-04-04', 'Nam', 'Hồ Chí Minh', 1),
-(3, 'Đăng Hoàng', 'hung29manh@gmail.com', '123456', '0394083764', '1996-04-04', 'Nữ', 'Hưng Yên', 2);
+(1, 'Quản lý', 'quanly@gmail.com', '123456', '0394063547', '1996-04-04', 'Nam', 'Đà Nẵng', 1);
 
 -- --------------------------------------------------------
 
@@ -57,14 +56,6 @@ CREATE TABLE `nhacungcap` (
   `id` int(11) NOT NULL,
   `tennhacungcap` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `nhacungcap`
---
-
-INSERT INTO `nhacungcap` (`id`, `tennhacungcap`) VALUES
-(3, 'Nhà cung cấp A'),
-(4, 'Nhà cung cấp B');
 
 -- --------------------------------------------------------
 
@@ -80,15 +71,6 @@ CREATE TABLE `nhaphang` (
   `nguoidung_id` int(11) NOT NULL,
   `ngay` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `nhaphang`
---
-
-INSERT INTO `nhaphang` (`id`, `sanpham_id`, `soluong`, `gia`, `nguoidung_id`, `ngay`) VALUES
-(1, 3, 100, 100000, 1, '2023-04-13'),
-(2, 3, 200, 200000, 1, '2023-04-13'),
-(3, 2, 100, 200000, 3, '2023-04-13');
 
 -- --------------------------------------------------------
 
@@ -126,14 +108,6 @@ CREATE TABLE `sanpham` (
   `ngayhethan` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Đang đổ dữ liệu cho bảng `sanpham`
---
-
-INSERT INTO `sanpham` (`id`, `ten`, `anh`, `soluong`, `nhacungcap_id`, `tinhtrang`, `ngaysanxuat`, `ngayhethan`) VALUES
-(2, 'Tinh dầu', 'bhoa.jpg', 100, 4, 'Hoạt động', '2023-04-12', '2023-04-22'),
-(3, 'Nước hoa', 'photo_2022_08_09_07_14_4420220809074805202.jpg', 175, 3, 'Hoạt động', '2023-04-13', '2023-05-06');
-
 -- --------------------------------------------------------
 
 --
@@ -148,13 +122,6 @@ CREATE TABLE `xuathang` (
   `nguoidung_id` int(11) NOT NULL,
   `ngay` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `xuathang`
---
-
-INSERT INTO `xuathang` (`id`, `sanpham_id`, `soluong`, `gia`, `nguoidung_id`, `ngay`) VALUES
-(1, 3, 125, 120000, 1, '2023-04-13');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -210,19 +177,19 @@ ALTER TABLE `xuathang`
 -- AUTO_INCREMENT cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `nhacungcap`
 --
 ALTER TABLE `nhacungcap`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `nhaphang`
 --
 ALTER TABLE `nhaphang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `quyen`
@@ -234,13 +201,13 @@ ALTER TABLE `quyen`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `xuathang`
 --
 ALTER TABLE `xuathang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
