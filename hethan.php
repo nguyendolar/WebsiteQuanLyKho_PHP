@@ -35,7 +35,8 @@
                                     $query = "SELECT a.*,b.tennhacungcap 
                                     FROM sanpham as a,nhacungcap as b
                                      WHERE a.nhacungcap_id = b.id 
-                                     AND DATEDIFF(a.ngayhethan, a.ngaysanxuat) <= 15
+				     AND CURDATE() <= a.ngayhethan
+                                     AND DATEDIFF(a.ngayhethan, CURDATE()) <= 15
                                      ORDER BY a.ngayhethan ASC";
                                     $result = mysqli_query($connect, $query);
                                     $stt = 1;
