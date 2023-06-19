@@ -12,6 +12,7 @@
     <?php include('inc/menu.php')?>
         <div id="layoutSidenav_content">
             <main>
+                <?php $currentDate = date('Y-m-d');?>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Danh sách sản phẩm</h1>
                     <div class="card mb-4">
@@ -178,12 +179,12 @@
                                                         <div class="col-6">
                                                             <label for="category-film"
                                                                 class="col-form-label">Ngày sản xuất:</label>
-                                                                <input type="date" class="form-control" id="category-film" value="<?php echo $arUser["ngaysanxuat"] ?>" name="nsx" required>
+                                                                <input type="date" class="form-control" max="<?php echo $currentDate; ?>" id="tu_ngay" value="<?php echo $arUser["ngaysanxuat"] ?>" name="nsx" required>
                                                         </div>
                                                         <div class="col-6">
                                                             <label for="category-film"
                                                                 class="col-form-label">Ngày hết hạn:</label>
-                                                                <input type="date" class="form-control" id="category-film" value="<?php echo $arUser["ngayhethan"] ?>" name="nhh" required>
+                                                                <input type="date" class="form-control" id="den_ngay" value="<?php echo $arUser["ngayhethan"] ?>" name="nhh" onchange="validateDate()" required>
                                                         </div>
                                                         </div>
                                                         </div>
@@ -255,12 +256,12 @@
                                                         <div class="col-6">
                                                             <label for="category-film"
                                                                 class="col-form-label">Ngày sản xuất:</label>
-                                                                <input type="date" class="form-control" id="category-film" name="nsx" required>
+                                                                <input type="date" class="form-control" max="<?php echo $currentDate; ?>" id="tu_ngay" name="nsx" required>
                                                         </div>
                                                         <div class="col-6">
                                                             <label for="category-film"
                                                                 class="col-form-label">Ngày hết hạn:</label>
-                                                                <input type="date" class="form-control" id="category-film" name="nhh" required>
+                                                                <input type="date" class="form-control" id="den_ngay" name="nhh" required onchange="validateDate()">
                                                         </div>
                                                         </div>
                                                     </div>
@@ -288,6 +289,19 @@
             <?php include('inc/footer.php')?>
         </div>
     </div>
+    <script>
+        function validateDate() {
+            var date1 = new Date(document.getElementById("tu_ngay").value);
+            var date2 = new Date(document.getElementById("den_ngay").value);
+
+            // Kiểm tra ngày thứ hai phải lớn hơn ngày thứ nhất
+            if (date2 <= date1) {
+                alert("Không thể chọn ngày nhỏ hơn.");
+                document.getElementById("den_ngay").value = "";
+                // Xử lý khi ngày không hợp lệ
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>

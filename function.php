@@ -162,7 +162,7 @@ if(isset($_POST['addxh'])){
     $querylm = mysqli_query($connect, "SELECT * FROM sanpham WHERE `id`='{$sp}'");
     $row = mysqli_fetch_array($querylm);
     $slsp = $row['soluong'];
-    if($soluong < $slsp){
+    if($soluong <= $slsp){
         $query = "INSERT INTO xuathang (sanpham_id, soluong, gia, nguoidung_id) 
         VALUES ( '{$sp}', '{$soluong}', '{$giaxuat}', '{$idnd}') ";
         $result = mysqli_query($connect, $query);

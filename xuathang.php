@@ -100,14 +100,14 @@
                                                         <div class="col-12">
                                                             <label for="category-film"
                                                                 class="col-form-label">Số lượng xuất:</label>
-                                                                <input type="number" class="form-control" id="category-film" name="soluong" required>
+                                                                <input type="number" min="1" class="form-control" id="category-film" name="soluong" required>
                                                         </div>
                                                         </div>
                                                         <div class="row">
                                                         <div class="col-12">
                                                             <label for="category-film"
                                                                 class="col-form-label">Giá xuất:</label>
-                                                                <input type="number" class="form-control" id="category-film" name="giaxuat" required>
+                                                                <input type="number" min="1" class="form-control" id="category-film" name="giaxuat" required>
                                                         </div>
                                                         </div>
                                                     </div>

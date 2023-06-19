@@ -11,6 +11,7 @@
     <?php include('inc/menu.php')?>
         <div id="layoutSidenav_content">
             <main>
+                <?php $currentDate = date('Y-m-d'); ?>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Danh sách người dùng</h1>
                     <div class="card mb-4">
@@ -171,7 +172,7 @@
                                                         <div class="col-6">
                                                             <label for="category-film"
                                                                 class="col-form-label">Ngày sinh:</label>
-                                                                <input type="date" class="form-control" id="category-film" name="ngaysinh" value="<?php echo $arUser["ngaysinh"] ?>" required>
+                                                                <input type="date" class="form-control" max="<?php echo $currentDate; ?>" id="category-film" name="ngaysinh" value="<?php echo $arUser["ngaysinh"] ?>" required>
                                                         </div>
                                                         </div>
                                                         <div class="row">
@@ -262,7 +263,7 @@
                                                         <div class="col-6">
                                                             <label for="category-film"
                                                                 class="col-form-label">Ngày sinh:</label>
-                                                                <input type="date" class="form-control" id="category-film" name="ngaysinh" required>
+                                                                <input type="date" max="<?php echo $currentDate; ?>" class="form-control" id="category-film" name="ngaysinh" required>
                                                         </div>
                                                         </div>
                                                         <div class="row">
